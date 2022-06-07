@@ -20,8 +20,11 @@ class DynamicArray {
 
 
   pop() {
-
-    // Your code here
+    let result =  this.data[this.length - 1]
+    console.log(result)
+    this.data[this.length - 1] = undefined
+    this.length--
+    return result
   }
 
   shift() {
@@ -49,16 +52,16 @@ class DynamicArray {
 
 }
 
-const newArr = new DynamicArray
-newArr.capacity = 4
-newArr.length = 0
-console.log(newArr.data)
-newArr.unshift('lalala')
-console.log(newArr.data)
-console.log(newArr.length)
-newArr.push('lulululu')
-console.log(newArr.data)
-console.log(newArr.length)
-console.log(newArr.data.length[newArr.length])
+// const newArr = new DynamicArray
+// console.log(newArr.length)
+// console.log(newArr.unshift(1))
+// console.log(newArr.unshift('hi'))
+// console.log(newArr.unshift('lol'))
+// console.log(newArr.unshift('@_@'))
+// console.log(newArr.data)
+// console.log(newArr.unshift('!!'))
+// console.log(newArr.data)
+// console.log(newArr.capacity)
+
 
 module.exports = DynamicArray;
