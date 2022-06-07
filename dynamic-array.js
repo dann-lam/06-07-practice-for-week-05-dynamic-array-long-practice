@@ -49,10 +49,15 @@ class DynamicArray {
   }
 
   indexOf (val) {
-
-    // Your code here
+    for(let i = 0; i < this.length; i++){
+      if(this.data[i] === val) {
+        console.log(i)
+          return i
+      }
+    }
+    return -1
   }
-
+  
   resize () {
     //
     // Your code here
@@ -60,13 +65,14 @@ class DynamicArray {
 
 }
 
-// const newArr = new DynamicArray
-// newArr.push(1)
-// newArr.push('<(@_@<)')
-// newArr.push('(>^_^)>')
-// console.log(newArr.data)
-// newArr.shift()
-// console.log(newArr.data)
+const newArr = new DynamicArray
+newArr.push(1)
+newArr.push(2)
+newArr.push(3)
+console.log(newArr.data)
+newArr.indexOf(1)
+newArr.indexOf(2)
+console.log(newArr.data)
 
 
 module.exports = DynamicArray;
