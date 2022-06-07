@@ -28,8 +28,10 @@ class DynamicArray {
   }
 
   shift() {
-
-    // Your code here
+    let result = this.data[0]
+    this.data[0] = undefined
+    this.length--
+    return result
   }
 
   unshift(val) {
