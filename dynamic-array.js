@@ -29,9 +29,15 @@ class DynamicArray {
 
   shift() {
     let result = this.data[0]
-    this.data[0] = undefined
+    //I want to copy over whatever is left from the "length" of what we have to the left.
+    for (let i = 0; i < this.length; i++){
+      this.data[i] = this.data[i + 1]
+    }
+    console.log(this.data)
     this.length--
     return result
+    //We need to iterate backwards and then reassign values, like in unshift.
+
   }
 
   unshift(val) {
@@ -55,15 +61,12 @@ class DynamicArray {
 }
 
 // const newArr = new DynamicArray
-// console.log(newArr.length)
-// console.log(newArr.unshift(1))
-// console.log(newArr.unshift('hi'))
-// console.log(newArr.unshift('lol'))
-// console.log(newArr.unshift('@_@'))
+// newArr.push(1)
+// newArr.push('<(@_@<)')
+// newArr.push('(>^_^)>')
 // console.log(newArr.data)
-// console.log(newArr.unshift('!!'))
+// newArr.shift()
 // console.log(newArr.data)
-// console.log(newArr.capacity)
 
 
 module.exports = DynamicArray;
